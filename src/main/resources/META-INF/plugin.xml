@@ -1,0 +1,24 @@
+<idea-plugin>
+    <id>ReadOnly File Encoding Panel</id>
+    <name>ReadOnly File Encoding Panel</name>
+    <vendor email="cqy2016@gmail.com" url="https://github.com/chenqiyue/ReadOnlyFileEncodingPanel">cqy</vendor>
+
+    <description><![CDATA[
+    增加一个专门用于修改只读文件编码的status bar，用于修复jar文件无法修改文件编码的问题
+    ]]></description>
+
+    <change-notes><![CDATA[
+    <ul>
+        <li><b>1.0.0</b> 支持2020.3，持久化只读文件编码到项目配置中</li>
+    </ul>
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <statusBarWidgetFactory implementation="com.chenqiyue.idea.bugfix.encoding.ReadOnlyFileEncodingStatusBarWidgetFactory"/>
+    </extensions>
+
+    <actions>
+    </actions>
+</idea-plugin>
