@@ -73,7 +73,7 @@ public class ReadOnlyFileEncodingPanel extends EncodingPanel {
             }
         };
         action.getTemplatePresentation().setText("ReadOnly File Encoding");
-        return action.createPopup(context);
+        return action.createPopup(context, null);
     }
 
     private void forceUpdateProjectEncodingHistory(Project project, @NotNull VirtualFile virtualFile,
