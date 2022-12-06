@@ -76,6 +76,7 @@ public class ReadOnlyFileEncodingPanel extends EncodingPanel {
         return action.createPopup(context, null);
     }
 
+    @SuppressWarnings("unchecked")
     private void forceUpdateProjectEncodingHistory(Project project, @NotNull VirtualFile virtualFile,
                                                    @NotNull Charset charset) {
         try {
