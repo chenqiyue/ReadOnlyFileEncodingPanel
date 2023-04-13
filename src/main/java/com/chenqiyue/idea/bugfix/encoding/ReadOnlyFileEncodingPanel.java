@@ -18,6 +18,7 @@ import com.intellij.openapi.wm.StatusBar;
 import com.intellij.openapi.wm.StatusBarWidget;
 import com.intellij.openapi.wm.impl.status.EncodingPanel;
 import com.intellij.util.ObjectUtils;
+import kotlinx.coroutines.CoroutineScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,8 +32,8 @@ import java.util.Map;
  */
 public class ReadOnlyFileEncodingPanel extends EncodingPanel {
 
-    public ReadOnlyFileEncodingPanel(@NotNull Project project) {
-        super(project);
+    public ReadOnlyFileEncodingPanel(@NotNull Project project, @NotNull CoroutineScope scope) {
+        super(project, scope);
     }
 
     @NotNull
@@ -93,7 +94,7 @@ public class ReadOnlyFileEncodingPanel extends EncodingPanel {
     @NotNull
     @Override
     protected StatusBarWidget createInstance(@NotNull Project project) {
-        return new ReadOnlyFileEncodingPanel(project);
+        return new ReadOnlyFileEncodingPanel(project, getScope());
     }
 
     @Override

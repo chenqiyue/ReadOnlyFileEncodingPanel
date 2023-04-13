@@ -5,6 +5,7 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.wm.StatusBar;
 import com.intellij.openapi.wm.StatusBarWidget;
 import com.intellij.openapi.wm.impl.status.widget.StatusBarEditorBasedWidgetFactory;
+import kotlinx.coroutines.CoroutineScope;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 
@@ -28,9 +29,8 @@ public class ReadOnlyFileEncodingStatusBarWidgetFactory extends StatusBarEditorB
     }
 
     @Override
-    public @NotNull
-    StatusBarWidget createWidget(@NotNull Project project) {
-        return new ReadOnlyFileEncodingPanel(project);
+    public @NotNull StatusBarWidget createWidget(@NotNull Project project, @NotNull CoroutineScope scope) {
+        return new ReadOnlyFileEncodingPanel(project, scope);
     }
 
     @Override
